@@ -1,7 +1,14 @@
-import './App.css';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { HomePage, CommitViewerPage } from '../pages';
 
-function App() {
-return <p>somoye</p>;
+export default function App() {
+  return (
+    <>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/commit" component={CommitViewerPage} />
+      </Switch>
+    </>
+  );
 }
-
-export default App;
