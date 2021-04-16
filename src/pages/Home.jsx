@@ -191,7 +191,8 @@ const HomePageMainContainer = styled.main`
 
 Home.propTypes = {
   setSearchValue: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  history: PropTypes.object.isRequired,
 };
 
 export default Home;
