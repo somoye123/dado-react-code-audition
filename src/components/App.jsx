@@ -7,6 +7,7 @@ import '../App.css';
 export default function App() {
   const history = useHistory();
   const [searchValue, setSearchValue] = useState('');
+  const [loading, setLoading] = useState(false);
   return (
     <>
       <Switch>
@@ -14,7 +15,11 @@ export default function App() {
           <HomePage history={history} setSearchValue={setSearchValue} />
         </Route>
         <Route exact path="/commit">
-          <CommitViewerPage searchValue={searchValue} />
+          <CommitViewerPage
+            searchValue={searchValue}
+            loading={loading}
+            setLoading={setLoading}
+          />
         </Route>
       </Switch>
     </>
