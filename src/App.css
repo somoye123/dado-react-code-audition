@@ -17,4 +17,6 @@ Variables
 */
 :root {
   --primaryColor: #18214d;
+  --neutral: #dfe4ea;
+  --placeholderPrimary: #b1b5c5;
 }
