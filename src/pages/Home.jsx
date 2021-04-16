@@ -53,6 +53,7 @@ const Home = ({ setSearchValue, history }) => {
               placeholder="Eg. facebook/react"
               ref={searchValue}
               onChange={handleChange}
+              required
             />
           </div>
           <button type="submit">See Commit 🚀</button>
