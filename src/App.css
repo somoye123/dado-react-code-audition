@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  font-family: 'Inter', sans-serif;
 }
 
 /*
@@ -11,5 +12,5 @@ Variables
 ======
 */
 :root {
-  --primaryColor: #18214D;
+  --primaryColor: #18214d;
 }
