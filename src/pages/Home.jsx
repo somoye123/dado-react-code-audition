@@ -210,6 +210,20 @@ const HomePageMainContainer = styled.main`
       letter-spacing: -3px;
       margin-bottom: 16px;
     }
+    form {
+      flex-direction: row;
+      justify-content: center;
+      div {
+        input {
+          width: 694px;
+          margin-right: 16px;
+        }
+      }
+      button {
+        margin-top: 0;
+        width: 210px;
+      }
+    }
   }
 `;
 
