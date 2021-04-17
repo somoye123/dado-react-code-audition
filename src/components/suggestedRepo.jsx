@@ -16,6 +16,9 @@ const SuggestedRepoContainer = styled.button`
   line-height: 19px;
   letter-spacing: -0.4px;
   color: white;
+  @media screen and (min-width: 992px) {
+    margin: 0 16px;
+  }
 `;
 
 export default suggestedRepo;
