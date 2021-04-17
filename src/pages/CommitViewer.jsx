@@ -44,10 +44,10 @@ const CommitViewer = ({
             <AiOutlineSearch />
             <input
               type="text"
-              placeholder="Eg. facebook/react"
               ref={searchRepo}
               onChange={handleChange}
               required
+              value={searchValue}
             />
           </div>
           <button type="submit">See Commit 🚀</button>
@@ -77,6 +77,51 @@ const CommitViewerPageHeaderContainer = styled.nav`
     line-height: 34px;
     letter-spacing: -0.6px;
     color: var(--primaryColor);
+  }
+  form {
+    display: none;
+  }
+  @media screen and (min-width: 992px) {
+    display: flex;
+    justify-content: center;
+    height: 130px;
+    padding-top: 0;
+    align-items: center;
+    form {
+    display: block;
+    display: flex;
+    div {
+      position: relative;
+      svg {
+        position: absolute;
+        left: 40px;
+        top: 15px;
+      }
+      input {
+        background: var(--neutral);
+        border-radius: 8px;
+        height: 58px;
+        padding-left: 45.63px;
+        width: 666px;
+        border: transparent;
+        margin-left: 32px;
+        margin-right: 16px;
+      }
+    }
+    button {
+      width: 198px;
+      height: 58px;
+      background: var(--secondaryColor);
+      border: transparent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+  }
   }
 `;
 
