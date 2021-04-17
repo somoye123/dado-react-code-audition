@@ -19,6 +19,7 @@ export default function App() {
             searchValue={searchValue}
             loading={loading}
             setLoading={setLoading}
+            setSearchValue={setSearchValue}
           />
         </Route>
       </Switch>
