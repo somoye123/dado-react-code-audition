@@ -58,11 +58,7 @@ const Home = ({ setSearchValue, history }) => {
           </div>
           <button type="submit">See Commit 🚀</button>
         </form>
-        <small>
-          Or pick one of these
-          <br />
-          suggested repos
-        </small>
+        <small>Or pick one of these suggested repos</small>
         <section>
           {SuggestedRepos.map(({ id, text }) => (
             <SuggestedRepo
@@ -187,7 +183,6 @@ const HomePageMainContainer = styled.main`
   }
   small {
     width: 180px;
-    height: 40px;
     font-size: 14px;
     line-height: 20px;
     text-align: center;
@@ -223,6 +218,14 @@ const HomePageMainContainer = styled.main`
         margin-top: 0;
         width: 210px;
       }
+    }
+    small {
+      width: 236px;
+      margin: 24px auto;
+    }
+    section {
+      flex-direction: row;
+      justify-content: center;
     }
   }
 `;
