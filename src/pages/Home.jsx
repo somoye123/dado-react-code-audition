@@ -129,9 +129,9 @@ const HomePageMainContainer = styled.main`
     text-align: center;
     letter-spacing: -2.4px;
     color: var(--primaryColor);
+    margin-bottom: 24px;
   }
   p {
-    margin-top: 24px;
     font-size: 20px;
     line-height: 28px;
     text-align: center;
@@ -201,6 +201,15 @@ const HomePageMainContainer = styled.main`
     flex-direction: column;
     align-items: center;
     margin-bottom: 38px;
+  }
+
+  @media screen and (min-width: 992px) {
+    h1 {
+      font-size: 72px;
+      line-height: 80px;
+      letter-spacing: -3px;
+      margin-bottom: 16px;
+    }
   }
 `;
 
