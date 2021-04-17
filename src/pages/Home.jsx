@@ -107,6 +107,19 @@ const HomePageHeaderContainer = styled.header`
       }
     }
   }
+  @media screen and (min-width: 992px) {
+    nav {
+      padding: 48px 145px 0;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 64px;
+    }
+    ul {
+      li:last-child {
+        margin-left: 32px;
+      }
+    }
+  }
 `;
 const HomePageMainContainer = styled.main`
   h1 {
