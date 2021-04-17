@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable import/no-cycle */
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line import/no-cycle
+import { AiOutlineSearch } from 'react-icons/ai';
 import { CommitDetails } from '../components';
 import GithubApi from '../api/githubApi';
 
-const CommitViewer = ({ searchValue, loading, setLoading }) => {
+const CommitViewer = ({
+  setSearchValue, searchValue, loading, setLoading,
+}) => {
   const [commits, setCommits] = useState([]);
+  const searchRepo = useRef('');
 
   const getCommit = async (repoName) => {
     try {
@@ -20,14 +24,34 @@ const CommitViewer = ({ searchValue, loading, setLoading }) => {
     }
   };
 
+  const handleChange = () => setSearchValue(searchRepo.current.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getCommit(searchValue);
+  };
+
   useEffect(() => {
     getCommit(searchValue);
-  }, [searchValue]);
+  }, []);
 
   return (
     <>
       <CommitViewerPageHeaderContainer>
         <div>CommitViewer</div>
+        <form className="search-form" onSubmit={handleSubmit}>
+          <div>
+            <AiOutlineSearch />
+            <input
+              type="text"
+              placeholder="Eg. facebook/react"
+              ref={searchRepo}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit">See Commit 🚀</button>
+        </form>
       </CommitViewerPageHeaderContainer>
       <CommitViewerPageMainContainer>
         <h1>{searchValue}</h1>
@@ -80,6 +104,7 @@ CommitViewer.propTypes = {
   searchValue: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired,
   setLoading: PropTypes.func.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
 };
 
 export default CommitViewer;
